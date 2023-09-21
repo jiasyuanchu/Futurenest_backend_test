@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.STRING
   }, {});
   Employee.associate = function(models) {
+    Employee.hasMany(models.TimeSheet, { foreignKey: 'employeeId' })
     // associations can be defined here
   };
   return Employee;
