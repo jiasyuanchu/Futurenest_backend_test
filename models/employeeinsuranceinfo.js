@@ -6,14 +6,14 @@ module.exports = (sequelize, DataTypes) => {
     LaborInsuranceCompanyShare: DataTypes.DECIMAL,
     HealthInsuranceEmployeeShare: DataTypes.DECIMAL,
     HealthInsuranceCompanyShare: DataTypes.DECIMAL,
-    Retirement: DataTypes.DECIMAL
+    Retirement: DataTypes.DECIMAL,
   }, {
     sequelize,
     modelName: 'Employee',
-    tableName: 'Employees'
+    tableName: 'Employees',
   });
   EmployeeInsuranceInfo.associate = function(models) {
-    EmployeeInsuranceInfo.belongsTo(models.Employee, { foreignKey: 'employeeId' })
+    EmployeeInsuranceInfo.belongsTo(models.Employee, {foreignKey: 'employeeId'});
   };
   return EmployeeInsuranceInfo;
 };

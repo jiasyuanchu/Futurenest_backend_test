@@ -2,14 +2,14 @@
 module.exports = (sequelize, DataTypes) => {
   const WeekSummary = sequelize.define('WeekSummary', {
     weekEndingDate: DataTypes.DATE,
-    totalHoursWorked: DataTypes.INTEGER
+    totalHoursWorked: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Employee',
-    tableName: 'Employees'
+    tableName: 'Employees',
   });
   WeekSummary.associate = function(models) {
-    WeekSummary.belongsTo(models.Employee, { foreignKey: 'employeeId' })
+    WeekSummary.belongsTo(models.Employee, {foreignKey: 'employeeId'});
   };
   return WeekSummary;
 };
