@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "95568434-b581-4815-96af-bcedfdc81977",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27695004",
+		"_collection_link": "https://www.postman.com/planetary-meteor-508662/workspace/futurenest-backend-test/collection/27695004-95568434-b581-4815-96af-bcedfdc81977?action=share&source=collection_link&creator=27695004"
+	},
+	"item": [
+		{
+			"name": "getEmployeeDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/hr/employee-details/:employeeId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hr",
+						"employee-details",
+						":employeeId"
+					],
+					"variable": [
+						{
+							"key": "employeeId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSalaryCalculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/hr/salary-calculations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hr",
+						"salary-calculations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
