@@ -77,6 +77,25 @@ const hrController = {
       next(error)
     }
   },
+  getEmployeeDetails: async (req, res, next) => {
+    try {
+      // 從路由參數中獲取 employeeId
+      const { employeeId } = req.params
+
+      // 使用 employeeId 查詢員工基本資料
+      const employee = await Employee.findByPk(employeeId)
+
+      // 如果找到了員工，將員工基本資料回傳給前端
+      if (employee) {
+        res.json(employee)
+      } else {
+        res.status(404).json({ error: 'Employee not found' })
+      }
+    } catch (error) {
+      console.error(error)
+      next(error)
+    }
+  },
 }
 
 module.exports = hrController
