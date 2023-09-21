@@ -12,10 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     status: DataTypes.STRING
   }, {});
-  Employee.associate = function(models) {
+  Employee.associate = function (models) {
     Employee.hasMany(models.TimeSheet, { foreignKey: 'employeeId' })
     Employee.hasMany(models.MonthSummary, { foreignKey: 'employeeId' })
     Employee.hasMany(models.WeekSummary, { foreignKey: 'employeeId' })
+    Employee.hasMany(models.Payroll, { foreignKey: 'employeeId' })
+    Employee.hasMany(models.EmployeeInsuranceInfo, { foreignKey: 'employeeId' })
   };
   return Employee;
 };
