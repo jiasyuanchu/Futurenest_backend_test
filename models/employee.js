@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Employee.associate = function(models) {
     Employee.hasMany(models.TimeSheet, { foreignKey: 'employeeId' })
-    // associations can be defined here
+    Employee.hasMany(models.MonthSummary, { foreignKey: 'employeeId' })
+    Employee.hasMany(models.WeekSummary, { foreignKey: 'employeeId' })
   };
   return Employee;
 };
