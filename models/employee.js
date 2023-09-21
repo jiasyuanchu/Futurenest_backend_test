@@ -20,4 +20,4 @@ module.exports = (sequelize, DataTypes) => {
     Employee.hasMany(models.EmployeeInsuranceInfo, {foreignKey: 'employeeId'});
   };
   return Employee;
-};
+}
